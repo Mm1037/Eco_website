@@ -1,0 +1,659 @@
+:root {
+  --st-color: #26c939;
+  --nd-color: #25a934;
+  --rd-color: #8bc692;
+  --th-color: #c99826;
+  --border-r-lg: 20px;
+  --border-r-md: 15px;
+  --border-r-sm: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--bs-gray);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--st-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nd-color);
+}
+
+/* Preloader Starts */
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: var(--bs-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.logo {
+  animation: fading 2s infinite;
+}
+
+@keyframes fading {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.loader {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  height: 20px;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--st-color);
+  animation: bounce 0.6s infinite alternate;
+}
+
+.circle:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.circle:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.circle:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  to {
+    opacity: 0.3;
+    transform: translateY(-16px);
+  }
+}
+
+/* Preloader Ends */
+
+/* Elements Start */
+
+main {
+  min-height: 80vh;
+  margin-top: 8rem;
+}
+
+header {
+  background-color: var(--bs-white);
+  box-shadow: 0px 1px 20px 0px var(--bs-gray);
+}
+
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Elements End */
+
+/* Classes Starts */
+
+.nav-item {
+  padding: 5px 16px;
+  margin: 5px 10px;
+  border: 2px solid var(--bs-gray-dark);
+}
+
+.nav-item:hover {
+  border: 1px solid var(--bs-gray-dark);
+  box-shadow: inset 1px 1px 5px 0px !important;
+  transition: 0.5s linear;
+}
+
+.nav-link {
+  padding: 0 var(--bs-nav-link-padding-x);
+}
+
+.nav-link i {
+  padding: 5px;
+  color: var(--bs-black);
+  background-color: var(--st-color);
+}
+
+.nav-item:hover .dropdown-menu {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: block !important;
+  transition: 5s;
+}
+
+/*=======================  chat bot start =============================*/
+
+
+/* Style for the chatbot container on screens wider than 450px */
+@media (min-width: 450px) {
+  .main-card {
+    width: 96%;
+    max-width: 400px;
+    height: calc(100% - 32px) !important;
+    border-radius: 8px !important;
+    max-height: 600px;
+    margin: 16px !important;
+  }
+}
+
+/* Style for the collapsed state of the chatbot */
+.main-card-collapsed {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 24px !important;
+  margin: 16px !important;
+}
+
+/* General style for the chatbot container */
+.main-card {
+  position: fixed;
+  z-index: 1030;
+  background: white;
+  color: white;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s;
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Style for the divider line */
+.line {
+  height: 1px;
+  background-color: var(--st-color);
+  width: 100%;
+  opacity: 0.2;
+}
+
+/* Style for the chatbot title */
+.main-title {
+  background-color: var(--st-color);
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  height: 48px;
+}
+
+/* Style for the container of the chatbot title icon */
+.main-title>div {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  margin-left: 8px;
+}
+
+/* Style for the chatbot title icon */
+.main-title svg {
+  height: 24px;
+  margin: auto;
+}
+
+/* Style for the title text */
+.main-title>span {
+  margin: auto auto auto 8px;
+}
+
+/* Style for the chat area */
+.chat-area {
+  flex-grow: 1;
+  overflow: auto;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for the message input field */
+.input-message {
+  padding: 8px 48px 8px 16px;
+  flex-grow: 1;
+  border: none;
+}
+
+/* Remove outline on focus for the input field */
+.input-message:focus {
+  outline: none;
+}
+
+/* Style for the input container */
+.input-div {
+  height: 48px;
+  display: flex;
+}
+
+/* Style for the send button */
+.input-send {
+  background: transparent;
+  width: 48px;
+  height: 48px;
+  right: 0%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Change background color on hover for the send button */
+.input-send:hover {
+  background: lavender;
+}
+
+/* Style for the send button icon */
+.input-send svg {
+  fill: var(--st-color);
+  margin: 11px 8px;
+}
+
+/* Style for chat message containers */
+.chat-message-div {
+  display: flex;
+}
+
+/* Style for sent messages */
+.chat-message-sent, .chat-message-received {
+  background-color: white;
+  margin: 8px 16px 8px 64px;
+  padding: 8px 16px;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 100ms;
+  color: black;
+  border-radius: 8px 8px 2px 8px;
+  background-color: lavender;
+}
+
+/* Animation for fading in chat messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* General style for images in hero and tips sections */
+.hero img,
+.tips img {
+  filter: drop-shadow(2px 2px 5px gray);
+}
+
+/* Style for slider component */
+.slider {
+  height: 40vh;
+}
+
+/* Adjust height of slider on screens wider than 576px */
+@media (min-width: 576px) {
+  .slider {
+    height: 60vh;
+  }
+}
+
+/* Adjust height of slider on screens wider than 768px */
+@media (min-width: 768px) {
+  .slider {
+    height: 80vh;
+  }
+}
+
+/*=======================  chat bot end=============================*/
+
+.alert-cornar-left {
+  right: 1%;
+  bottom: 10%;
+  z-index: 999;
+}
+.rank {
+  transform: scale(1);
+  transition: 0.5s;
+}
+.rank:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.rank-one{background-color: #ffbf00;}
+.rank-two{background-color: #C0C0C0;}
+.rank-three{background-color: #CD7F32;}
+
+.start-image img {
+  transform: rotateX(0deg);
+  transition: all .5s ease;  
+}
+.start-image:hover img {
+  transform: rotateX(90deg);
+  transition: all .5s ease;
+}
+
+.start-image button {
+  position: relative;
+  top: -40%;
+  left: 50%;
+  transform: translate(-50px, -50px);
+  z-index: -1;
+}
+.start-image:hover button {
+  z-index: 1;
+}
+
+.scroll-heading {
+  animation: shake 1s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translateY(5px);}
+    50% { transform: translateY(-5px);}
+    100% { transform: translateY(5px);}
+}
+
+.bg-image {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+}
+/* Classes End */
+
+/* Ids Start */
+/* Class of icon to show and hide password */
+#togglepassword {
+  cursor: pointer;
+  padding: 10px;
+}
+
+#chatbot_toggle {
+  position: absolute;
+  right: 0;
+  border: none;
+  height: 48px;
+  width: 48px;
+  background: var(--st-color);
+  padding: 14px;
+  color: white;
+}
+
+#chatbot_toggle:hover {
+  background: var(--nd-color);
+}
+
+/* Ids End */
+
+/* Auth Page Start */
+
+/* Styling for the main wrapper */
+.wrapper {
+  background: var(--bs-white);
+  border-radius: var(--border-r-lg);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 15px 30px var(--bs-gray-dark);
+}
+
+/* Container for buttons */
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+/* Styling for buttons in button-container */
+.button-container button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+  font-weight: 600;
+}
+
+/* Active state for buttons */
+.button-container button.active {
+  color: var(--nd-color);
+  border-bottom: 2px solid var(--nd-color);
+}
+
+/* Hover state for buttons */
+.button-container button:hover {
+  color: var(--nd-color);
+}
+
+/* Hidden by default for form containers */
+.form-container {
+  display: none;
+}
+
+/* Show form-container when active */
+.form-container.active {
+  display: block;
+}
+
+/* Styling for input fields */
+.wrapper input[type="text"],
+.wrapper input[type="password"],
+.wrapper input[type="email"] {
+  background-color: var(--bs-white);
+  color: var(--bs-gray-dark);
+  padding: 10px 20px;
+  width: 100%;
+  border: 1px solid var(--bs-gray-200);
+  border-radius: var(--border-r-md);
+  transition: 0.3s;
+}
+
+/* Focus state for input fields */
+.wrapper input[type="text"]:focus,
+.wrapper input[type="password"]:focus,
+.wrapper input[type="email"]:focus {
+  border-color: var(--nd-color);
+  outline: none;
+}
+
+/* Styling for submit buttons */
+.wrapper input[type="submit"] {
+  background-color: var(--nd-color);
+  border: none;
+  color: white;
+  padding: 15px 0;
+  width: 50%;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 20px 0;
+  border-radius: var(--border-r-md);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover state for submit buttons */
+.wrapper input[type="submit"]:hover {
+  background-color: var(--st-color);
+}
+
+/* Styling for links */
+.wrapper a {
+  color: var(--rd-color);
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+/* Hover state for links */
+.wrapper a:hover {
+  color: var(--nd-color);
+}
+
+/* Styling for paragraph text */
+.wrapper p {
+  color: var(--bs-gray-dark);
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* auth page ends */
+
+/* home section 2 start */
+
+.check-icon {
+  color: #26c939;
+  font-size: 40px;
+}
+
+.list-unstyled li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* home section 2 end */
+
+/* Ashraf Page Start's Here */
+
+.form-control {
+  flex-grow: 0;
+  flex-basis: 100%;
+  border: #26c939;
+  border-bottom: #26c939 2px solid;
+}
+
+.table {
+  border-color: #26c939;
+  text-align: center;
+  width: 100%;
+}
+
+table img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  justify-content: space-between;
+}
+
+table tr:hover {
+  transform: scale(1.025);
+  transition: 0.2s ease-in-out;
+}
+
+table td:nth-child(2) p {
+  display: inline-block;
+  transform: translateY(0, 0.5rem);
+  /* Adjusted transform value */
+  padding-left: 0.5rem;
+  text-align: left;
+}
+
+.text-box {
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+
+/* contact-us start */
+.contact-container {
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.contact-box {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-box {
+  text-align: center;
+}
+
+/*contact-us end */
+
+/*about-us start*/
+hr {
+  border: 2px solid #26c939;
+}
+
+@media (max-width: 768px) {
+  .carousel-inner .carousel-item>div {
+    display: none;
+  }
+
+  .carousel-inner .carousel-item>div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+
+  .carousel-inner .carousel-item-right.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(33.333%);
+  }
+
+  .carousel-inner .carousel-item-left.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-33.333%);
+  }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left {
+  transform: translateX(0);
+}
+
+
+/*about-us end*/

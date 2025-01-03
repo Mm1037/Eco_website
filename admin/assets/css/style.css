@@ -1,0 +1,122 @@
+:root {
+    --st-color: #26c939;
+    --nd-color: #25a934;
+    --rd-color: #8bc692;
+    --th-color: #c99826;
+    --border-r-lg: 20px;
+    --border-r-md: 15px;
+    --border-r-sm: 10px;
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--bs-gray); 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--st-color); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--nd-color); 
+  }
+  
+  /* Preloader Starts */
+  #preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: var(--bs-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  
+  .logo {
+    animation: fading 2s infinite;
+  }
+  
+  @keyframes fading {
+    0% {
+      opacity: 1;
+    }
+  
+    25% {
+      opacity: 0.1;
+    }
+  
+    50% {
+      opacity: 0.5;
+    }
+  
+    70% {
+      opacity: 0.7;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .loader {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    height: 20px;
+  }
+  
+  .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--st-color);
+    animation: bounce 0.6s infinite alternate;
+  }
+  
+  .circle:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .circle:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  .circle:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  
+  @keyframes bounce {
+    to {
+      opacity: 0.3;
+      transform: translateY(-16px);
+    }
+  }
+  
+  /* Preloader Ends */
+  
+  
+  /* Nav Manu Start */
+  .nav-menu {
+    display: none;
+  }
+  @media (min-width: 768px){
+    .nav-menu {
+      display: flex;
+    }
+  }
+
+  /* Nav Manu End */
